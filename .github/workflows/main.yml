@@ -18,12 +18,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # Update ke v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4 # Update ke v4
         with:
-          node-version: '20'
+          node-version: '24'      # Update ke versi 24
 
       - name: Step 1 - Install ClawHub skill
         run: npx clawhub@latest install verified-agent-identity
@@ -38,5 +38,5 @@ jobs:
 
       - name: Step 3 - Link Human to Agent
         run: |
-          node scripts/manualLinkHumanToAgent.js --challenge '{"name": "Ndeso1128", "description": "Ndeso1128 AI Agent"}' 
+          node scripts/manualLinkHumanToAgent.js --challenge '{"name": "Ndeso1128", "description": "Ndeso1128 AI Agent"}'
           
